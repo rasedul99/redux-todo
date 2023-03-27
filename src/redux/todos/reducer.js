@@ -45,7 +45,6 @@ const reducer = (state = initialState, action) => {
       });
     case CLEARCOMPLETED:
       return state.map((todo) => !todo.completed);
-
     default:
       return state;
   }
