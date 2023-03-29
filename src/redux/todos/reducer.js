@@ -16,7 +16,10 @@ const nextTodoId = (todos) => {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADDED:
-      return [...state, { id: nextTodoId(state), text: action.payload }];
+      return [
+        ...state,
+        { id: nextTodoId(state), text: action.payload, completed: false },
+      ];
     case TOGGLED:
       return state.map((todo) => {
         if (todo.id !== action.payload) return todo;
@@ -44,7 +47,7 @@ const reducer = (state = initialState, action) => {
         };
       });
     case CLEARCOMPLETED:
-      return state.map((todo) => !todo.completed);
+      return state.filter((todo) => false);
     default:
       return state;
   }
