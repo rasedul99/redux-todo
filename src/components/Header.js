@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import tickImage from "../images/double-tick.png";
 import noteImage from "../images/notes.png";
+import plus from "../images/plus.png";
 import { added, allcompleted, clearcompleted } from "../redux/todos/actions";
 
 export default function Header() {
@@ -35,11 +36,8 @@ export default function Header() {
           onChange={handleInput}
           className="w-full text-lg px-4 py-1 border-none outline-none bg-gray-100 text-gray-500"
         />
-        <button
-          type="submit"
-          className="appearance-none w-8 h-8 bg-green-500 rounded-full"
-        >
-          +
+        <button type="submit" className="appearance-none w-8 h-8 rounded-full">
+          <img src={plus} />
         </button>
       </form>
 
